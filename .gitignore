@@ -1,0 +1,10 @@
+*.iml
+*config.properties
+*.MF
+
+allure-results/*
+target/*
+.idea/*
+.allure/*
+logs/*
+/build/
