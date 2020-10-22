@@ -74,6 +74,7 @@
 
                     <systemPropertyVariables>
                         <allure.results.directory>${project.basedir}/target/allure-results</allure.results.directory>
+                        <selenide.browser>chrome</selenide.browser>
                     </systemPropertyVariables>
                 </configuration>
                 <dependencies>
