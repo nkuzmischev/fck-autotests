@@ -1,6 +1,7 @@
 package examples;
 
 import com.codeborne.selenide.Condition;
+import com.codeborne.selenide.Configuration;
 import io.qameta.allure.Description;
 import io.qameta.allure.Link;
 import io.qameta.allure.Step;
@@ -12,11 +13,11 @@ import static com.codeborne.selenide.Selenide.*;
 
 @Link(name = "Полезная ссылка на аннотации", url = "https://habr.com/ru/company/sberbank/blog/359302/")
 @TmsLink("64785859")
-public class ExampleTest {
+public class ExampleFailTest {
 
-    @Test(description = "Демонстрационный тест")
+    @Test(description = "Демонстрационный тест с ошибкой")
     @Description("Проверка появления меню")
-    public void exampleTest() {
+    public void exampleFailTest() {
         // открытие приложения
         open("http://fckproject.itfbgroup.ru/fcktest_001/");
 
@@ -31,7 +32,8 @@ public class ExampleTest {
 
     @Step("Проверка появления меню")
     public void menuAppearance() {
-        $x("//*[@class=\"desktop-toolbar\"]//*[@class=\"topnav all\"]").hover();
+        Configuration.reportsFolder = "target/allure-results";
+//        $x("//*[@class=\"desktop-toolbar\"]//*[@class=\"topnav all\"]").hover();
         $x("//*[@class=\"topnav all\"]//ul[@class=\"dropdown-menu\"]").should(Condition.appear);
     }
 
