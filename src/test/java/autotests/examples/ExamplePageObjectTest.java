@@ -18,7 +18,7 @@ import static com.codeborne.selenide.Selenide.*;
  */
 @Link(name = "Полезная ссылка на аннотации", url = "https://habr.com/ru/company/sberbank/blog/359302/")
 @TmsLink("64785859")
-public class ExampleTestPageObject {
+public class ExamplePageObjectTest {
 
     @Test(description = "Демонстрационный тест")
     @Description("Проверка появления меню")

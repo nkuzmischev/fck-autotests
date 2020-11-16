@@ -21,7 +21,7 @@ import static com.codeborne.selenide.Selenide.page;
 @Link(name = "Полезная ссылка на аннотации", url = "https://habr.com/ru/company/sberbank/blog/359302/")
 @TmsLink("64785859")
 @Log4j
-public class ExampleTestPageObjectWithParent extends BaseTest {
+public class ExamplePageObjectWithParentTest extends BaseTest {
 
     @BeforeMethod
     @Step("Выполнение предусловий")
@@ -40,7 +40,7 @@ public class ExampleTestPageObjectWithParent extends BaseTest {
         menuAppearance();
     }
 
-    @Step("Шаг1. Проверка появления меню")
+    @Step("Шаг 1. Проверка появления меню")
     public void menuAppearance() {
         //наводимся на вкладку "Все"
         MainPage mainPage = page(MainPage.class);
