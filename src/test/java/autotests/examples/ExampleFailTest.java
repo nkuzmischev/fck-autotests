@@ -1,4 +1,4 @@
-package examples;
+package autotests.examples;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Description;
@@ -10,13 +10,16 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Selenide.*;
 
+/**
+ * Демонстрационный тест с ошибкой при выполнении
+ */
 @Link(name = "Полезная ссылка на аннотации", url = "https://habr.com/ru/company/sberbank/blog/359302/")
 @TmsLink("64785859")
-public class ExampleTest {
+public class ExampleFailTest {
 
-    @Test(description = "Демонстрационный тест")
+    @Test(description = "Демонстрационный тест с ошибкой")
     @Description("Проверка появления меню")
-    public void exampleTest() {
+    public void exampleFailTest() {
         // открытие приложения
         open("http://fckproject.itfbgroup.ru/fcktest_001/");
 
@@ -31,7 +34,7 @@ public class ExampleTest {
 
     @Step("Проверка появления меню")
     public void menuAppearance() {
-        $x("//*[@class=\"desktop-toolbar\"]//*[@class=\"topnav all\"]").hover();
+//        $x("//*[@class=\"desktop-toolbar\"]//*[@class=\"topnav all\"]").hover();
         $x("//*[@class=\"topnav all\"]//ul[@class=\"dropdown-menu\"]").should(Condition.appear);
     }
 

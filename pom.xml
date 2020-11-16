@@ -30,7 +30,6 @@
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
             <version>5.15.0</version>
-            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -52,6 +51,13 @@
             <version>2.3.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.16</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -69,7 +75,8 @@
                     <systemPropertyVariables>
                         <allure.results.directory>${project.basedir}/target/allure-results</allure.results.directory>
                         <selenide.browser>chrome</selenide.browser>
-                        <selenide.headless>true</selenide.headless>
+                        <selenide.headless>false</selenide.headless>
+                        <!--                        <selenide.reportsFolder>target/allure-results</selenide.reportsFolder>-->
                     </systemPropertyVariables>
                 </configuration>
                 <dependencies>
