@@ -21,7 +21,7 @@ public class ExampleTest {
     @Description("Проверка появления меню")
     public void examplePlainTest() {
         // открытие приложения
-        open("http://fckproject.itfbgroup.ru/fcktest_001/");
+        open("http://fckproject.itfbgroup.ru/auto/");
 
         //авторизация
         $("#user_name").sendKeys("test_auto");

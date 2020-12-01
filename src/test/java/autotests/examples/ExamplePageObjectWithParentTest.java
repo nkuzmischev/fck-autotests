@@ -36,7 +36,6 @@ public class ExamplePageObjectWithParentTest extends BaseTest {
     public void exampleTestPageObjectWithParent() {
         log.info("Сообщение для логгера, вместо System.out.println()");
 
-        //тестовый шаг 1
         menuAppearance();
     }
 

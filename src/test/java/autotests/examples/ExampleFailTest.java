@@ -21,7 +21,7 @@ public class ExampleFailTest {
     @Description("Проверка появления меню")
     public void exampleFailTest() {
         // открытие приложения
-        open("http://fckproject.itfbgroup.ru/fcktest_001/");
+        open("http://fckproject.itfbgroup.ru/auto/");
 
         //авторизация
         $("#user_name").sendKeys("test_auto");

@@ -24,7 +24,7 @@ public class ExamplePageObjectTest {
     @Description("Проверка появления меню")
     public void exampleTestWithPageObject() {
         // открытие приложения
-        open("http://fckproject.itfbgroup.ru/fcktest_001/");
+        open("http://fckproject.itfbgroup.ru/auto/");
 
         //авторизация
         LoginPage loginPage = page(LoginPage.class);

@@ -17,6 +17,7 @@ import static com.codeborne.selenide.Selenide.page;
 
 //аннотация для подключения логгера
 @Log4j
+//аннотация для подключения Listener'а для прикрепления скриншотов при падении тестов
 @Listeners(MyTestListener.class)
 public class BaseTest {
 
@@ -25,10 +26,11 @@ public class BaseTest {
     public void startUp() {
         // открытие приложения
         log.info("Начинаем тестирование");
-        open("http://fckproject.itfbgroup.ru/fcktest_001/");
+        open("http://fckproject.itfbgroup.ru/auto/");
     }
 
     @AfterMethod(description = "Выход из приложения")
+    @Step("Завершение тестирования")
     public void shutDown() {
         log.info("Выход из приложения");
         MainPage mainPage = page(MainPage.class);
