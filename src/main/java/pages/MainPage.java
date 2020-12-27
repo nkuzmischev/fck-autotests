@@ -5,6 +5,9 @@ import io.qameta.allure.Step;
 import lombok.Getter;
 import org.openqa.selenium.support.FindBy;
 
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.page;
+
 /**
  * Домашняя страница приложения
  */
@@ -25,6 +28,25 @@ public class MainPage {
     //аннотация для генерации геттера
     @Getter
     private SelenideElement allDropdown;
+
+    @FindBy(xpath = "//*[@id=\"grouptab_1\"]")
+    private SelenideElement allButton;
+
+    @FindBy(xpath = "//*[@id=\"toolbar\"]/ul[1]/li[3]/span[2]/ul[1]/li[22]/a[1]")
+    private SelenideElement requestButton;
+
+    public SelenideElement menuAppeals(String menu) {
+        return allDropdown.$x(".//a[contains(text(),'" + menu + "')]");
+    }
+
+
+    @Step("3.Обращение")
+    public RequestPage clickRequest() {
+        allButton.click();
+        requestButton.click();
+        RequestPage page = page(RequestPage.class);
+        return page;
+    }
 
 
     @Step("Выход из приложения")
