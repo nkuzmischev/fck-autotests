@@ -21,6 +21,16 @@ public class ViewingRequest {
 
     }
 
+    @Step("18")
+    public SelenideElement processingeadline() {
+        return $("#processing_deadline");
+    }
+
+    @FindBy(xpath = "//*[@field='weight']")
+    @Getter
+    private SelenideElement weight;
+
+
     @Step("21 шаг")
     public String state() {
         return state.getText();
