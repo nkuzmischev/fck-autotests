@@ -40,7 +40,7 @@ public class MainPage {
     }
 
 
-    @Step("3.Обращение")
+
     public RequestPage clickRequest() {
         allButton.click();
         requestButton.click();
@@ -49,7 +49,7 @@ public class MainPage {
     }
 
 
-    @Step("Выход из приложения")
+
     public void logOut() {
         profileDropdown.click();
         logoutLink.click();

@@ -25,9 +25,7 @@ public class CreateRequestPage {
     //12
     @FindBy(xpath = "//*[@id=\"subsubject\"]")
     private SelenideElement fieldSubSubject;
-    //13
-    //@FindBy(xpath = "//*[@id=tinymce")
-    //private SelenideElement fieldDetailPanel;
+
     @FindBy(id = "tinymce")
     @Getter
     private SelenideElement fieldDetailPanel;
@@ -45,7 +43,7 @@ public class CreateRequestPage {
     @Getter
     private SelenideElement buttonSaveExit;
 
-    @Step("4 Шаг. Раздел Контактная информация")
+
     public FioEmail clickContactMen() {
         fieldContact.sendKeys("Ласточкин Борис Васильевич");
         contactButton.click();
@@ -54,7 +52,7 @@ public class CreateRequestPage {
         return page;
     }
 
-    @Step("9-17")
+
     public CreateRequestPage fillingOutAppeal() {
         fieldCategory.click();
         fieldCategory.$x("./option[contains(text(),'" + "Сотрудник ФЦК" + "')]").click();
@@ -74,7 +72,7 @@ public class CreateRequestPage {
         return page;
     }
 
-    @Step("9-17")
+
     public ViewingRequest fillingOutAppeal2() {
 
         fieldContactEmails.click();

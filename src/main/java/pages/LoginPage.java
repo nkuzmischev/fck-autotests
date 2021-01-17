@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class LoginPage {
 
-    @Step("Логинимся под {username}")
+
     public void logIn(String username, String password) {
         $("#user_name").sendKeys(username);
         $("#username_password").sendKeys(password);

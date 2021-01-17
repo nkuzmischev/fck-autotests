@@ -14,14 +14,14 @@ public class ViewingRequest {
     @FindBy(xpath = "//*[@id=\"tab-content-0\"]/div[2]/div[1]/div[2]")
     private SelenideElement state;
 
-    @Step("20 шаг")
+
     public String status() {
         return status.getText();
 
 
     }
 
-    @Step("18")
+
     public SelenideElement processingeadline() {
         return $("#processing_deadline");
     }
@@ -31,7 +31,6 @@ public class ViewingRequest {
     private SelenideElement weight;
 
 
-    @Step("21 шаг")
     public String state() {
         return state.getText();
 

@@ -18,14 +18,11 @@ public class FioEmail {
     @FindBy(xpath = "//*[@id=\"search_form_submit\"]")
     private SelenideElement findButton;
 
-    //@FindBy(xpath = "body/table[4]/tbody[1]/tr[1]/td[1]/a[1]")
-    // private SelenideElement personButton;
     public SelenideElement findContact(String email, String fullName) {
         return $x(".//td[contains(text(),'" + email + "')]/..//a[contains(text(),'" + fullName + "')]");
     }
 
 
-    @Step("5-6-7-8 Шаг. Ввести ФИО и почту")
     public CreateRequestPage contactData() {
         fieldFIO.sendKeys("Ласточкин Борис Васильевич");
         fieldEmail.sendKeys("testlkvp@mail.ru");
