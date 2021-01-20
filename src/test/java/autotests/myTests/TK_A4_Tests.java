@@ -33,6 +33,7 @@ public class TK_A4_Tests extends BaseTest {
     ViewingRequest viewingRequest;
     MainPage mainPage;
     AdminPage adminPage;
+    String viewingRequestUrl;
 
     @BeforeMethod
     @Step("Выполнение предусловий")
@@ -101,6 +102,7 @@ public class TK_A4_Tests extends BaseTest {
     public void fillCategory() {
         createRequestPage = createRequestPage.fillingOutAppeal();
         viewingRequest = createRequestPage.fillingOutAppeal2();
+        viewingRequestUrl = url();
     }
 
     @Step("Шаг 5. Выполняем п.18 из ТК_А4 ")
@@ -142,7 +144,7 @@ public class TK_A4_Tests extends BaseTest {
             deadlineDay = deadlineDay.plusDays(1);
         }
 
-        open(url());
+        open(viewingRequestUrl);
         String finalDeadLine = deadlineDay.format(DateTimeFormatter.ofPattern("dd.MM.yyyy HH"));
         String expDeadLine = viewingRequest.processingeadline().getText();
         Assert.assertEquals(finalDeadLine, expDeadLine.substring(0, expDeadLine.length() - 3));
@@ -161,7 +163,7 @@ public class TK_A4_Tests extends BaseTest {
         adminPage.verificationRules("Входящий звонок", "Приглашение", "Мероприятия").click();
         int weight = adminPage.getCaseWeight() + adminPage.getPriority();
 
-        open(url());
+        open(viewingRequestUrl);
 
         Assert.assertEquals(weight, Integer.parseInt(viewingRequest.getWeight().getText()));
     }
