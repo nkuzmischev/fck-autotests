@@ -25,7 +25,7 @@ import static com.codeborne.selenide.WebDriverRunner.url;
 
 @Link(name = "Ссылка на тест-кейс", url = "https://confluence.itfbgroup.ru/pages/viewpage.action?pageId=64785538")
 @Log4j
-public class TK_A4_Tests extends BaseTest {
+public class TK_A4_Test extends BaseTest {
 
     RequestPage requestPage;
     CreateRequestPage createRequestPage;
